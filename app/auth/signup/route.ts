@@ -21,7 +21,7 @@
         { status: 400 }
       );
     }
-
+ 
     const { data, error } = await supabase.auth.signUp({ email, password });
 
     if (error) {
