@@ -30,7 +30,7 @@
         { status: 400 }
       );
     }
-
+       
     return NextResponse.json(
       { user: data.user },
       { status: 201 }
