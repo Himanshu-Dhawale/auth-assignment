@@ -113,15 +113,8 @@ curl http://localhost:3000/protected/profile \
 
 Protected routes are marked with a lock icon and can be tested directly from the browser after clicking **Authorize** and pasting a valid access token.
 
-(<img width="1438" height="823" alt="image" src="https://github.com/user-attachments/assets/97670067-c259-4b09-8567-32a90caff9d0" />
+<img width="1438" height="823" alt="image" src="https://github.com/user-attachments/assets/97670067-c259-4b09-8567-32a90caff9d0" />
 
-)
-
-## Known limitation — `POST /auth/logout`
-
-Worth documenting honestly: `supabase-js`'s current `auth.signOut()` method does not accept a raw access token as an argument (the assignment brief's original wording, `signOut(token)`, reflects an older/admin-style API). In the modern client SDK, `signOut()` acts on whatever session the *client instance itself* is holding — which doesn't map cleanly onto a stateless server route where each request is independent and only carries an access token (not a full session).
-
-As implemented here, `/auth/logout` verifies the incoming token is valid (via the same `verifyAuth` middleware used elsewhere) before calling `signOut()`, and correctly returns `204` on success. However, this does **not** guarantee the specific access token passed in is cryptographically invalidated — Supabase JWTs remain valid until their natural expiry regardless of a `signOut()` call, since they're stateless and self-verifying by design. A production system that needs immediate token revocation would need a token blocklist, short-lived access tokens with rotation, or the Supabase Admin API's server-side session revocation.
 
 ## Project structure
 
