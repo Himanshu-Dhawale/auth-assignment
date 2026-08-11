@@ -14,7 +14,7 @@ This project was built as part of the FlyRank AI Internship "Auth — Login & Pr
 
 ## Tech stack
 
-- Next.js 15+ (App Router, Route Handlers)
+- Next.js 16.3.0 (App Router, Route Handlers)
 - TypeScript
 - `@supabase/supabase-js`
 - `swagger-ui-express` style OpenAPI docs served at `/docs`
