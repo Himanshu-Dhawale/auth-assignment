@@ -113,9 +113,9 @@ curl http://localhost:3000/protected/profile \
 
 Protected routes are marked with a lock icon and can be tested directly from the browser after clicking **Authorize** and pasting a valid access token.
 
-![Swagger UI screenshot](image.png)
+(<img width="1438" height="823" alt="image" src="https://github.com/user-attachments/assets/97670067-c259-4b09-8567-32a90caff9d0" />
 
-*(Add your screenshot to a `docs/` folder in the repo, or update this path to wherever you save it.)*
+)
 
 ## Known limitation — `POST /auth/logout`
 
